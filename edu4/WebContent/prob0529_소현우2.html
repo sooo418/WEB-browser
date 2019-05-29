@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	
+</script>
+<script type="text/javascript">
+window.onload=function(){
+	$('.slide').hide()
+}
+function sliding(){
+	$('.slide').slideDown(3000)
+}
+function toggle(){
+	$('.slide').toggle(1000)
+}
+function stop(){
+	$('.slide').stop()
+}
+</script>
+<style type="text/css">
+table {
+	border: 1px solid gray;
+	width: 400px;
+}
+td.c{
+	border: 1px solid gray;
+	text-align: center;
+	background-color: lightgreen;
+}
+.slide{
+	text-align: center;
+	background-color: yellow;
+	border: 1px solid gray;
+	height: 150px;
+}
+</style>
+</head>
+<body>
+	<div>
+		<table>
+			<tr>
+				<td onclick="sliding()" class="c">[오늘의 공지사항]</td>
+			</tr>
+			<tr>
+				<td class="slide">
+					<p>오늘은 jQuery 프로그램을 학습합니다.
+					<p>예제를 작성한 후 실행해보세요.
+				</td>
+			</tr>
+			<tr>
+				<td align="center" class="c" onclick="toggle()">Toggle slide</td>
+			</tr>
+			<tr>
+				<td><button onclick="stop()">Stop sliding</button></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

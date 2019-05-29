@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+//jQuery를 $ 로 대체해서 사용가능
+/*
+	window.onload = function() {
+		$('h1').click(function() {
+			$(this).hide()
+		});
+		//$(Tag).click()은 해당태그를 클릭 시 괄호안에 함수를 실행시킬 수 있다.
+	};
+	
+	//p.456
+	$(document).ready(function(){
+		$('#j3').click(function(){
+			$(this).hide()
+		});
+	});
+*/
+$(function(){
+	$('h1').click(function(){ 
+		$(this).hide()
+	})
+});
+var a = $('h2')[0]
+//a.hide() ->해당 방식으로는 안됨.
+//$('h2')[0].hide() ->해당 방식으로도 안됨.
+
+//----------------------------
+$('h2:first')
+$('h2:first').hide()
+var s = $('h2:first')
+s.hide()
+
+</script>
+</head>
+<body>
+	
+<h1>클릭하면 사라집니다.</h1>
+<h2>hello jQuery 1</h2>
+<h2>hello jQuery 2</h2>
+<h2 id="j3">hello jQuery 3</h2>
+<h2 class='jc'>hello jQuery 4</h2>
+<h2 class='jc'>hello jQuery 5</h2>
+<h2 class='jc'>hello jQuery 5</h2>
+</body>
+</html>

@@ -4,20 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>querySelector</title>
+<script>
+	window.onload = function() {
+		document.querySelector('#h1').style.backgroundColor = 'red'
+		document.querySelector('p').style.backgroundColor = 'green'
+	};
+	function change() {
+		var cname = document.querySelector('#img1').src
+		cname = cname.substr(cname.lastIndexOf('/'))
+
+		if (cname == '/car.jpg') {
+			document.querySelector('#img1').src = './img/cat.jpg'
+		} else
+
+			document.querySelector('#img1').src = './img/car.jpg'
+	}
+	
+</script>
 </head>
 <body>
-	<h1>querySelector</h1>
+	<h1>js querySelector</h1>
 	<p>getElementByID , getElementByTagName ~~~ old
-	<p>querySelector , querySelectorAll ~~~ new
-	
-	<img alt="car.jgp" src="./img/car.jpg"/>
-	<br/><br/>
-	<h1> hello 1</h1>
+	<p>
+		querySelector , querySelectorAll ~~~ new 
+		<img id="img1" alt="car.jpg" src="./img/car.jpg" title="car.jpg" />
+		<button onclick="change()">change image</button>
+		<input type="button" value="요소숨김" onclick="document.getElementById('img1').style.visibility='hidden'" />
+		<input type="button" value="요소표시" onclick="document.getElementById('img1').style.visibility='visible'"/>
+		<br /> <br />
+	<h1>hello 1</h1>
 	<h1 id="h1">hello 2</h1>
-	<h1 clsee="hc">hello 3</h1>
+	<h1 class="hc">hello 3</h1>
 	<h1>hello 4</h1>
 	<h1 class="hc">hello 5</h1>
 	<h1>hello 6</h1>
+	<p>document.querySelectorAll('.hc'), 
+	document.querySelector('#h1')
 
+
+	
 </body>
 </html>

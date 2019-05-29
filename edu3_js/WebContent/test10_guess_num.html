@@ -12,7 +12,7 @@
 		try{
 				var x = document.getElementById('num').value
 			
-				if(x == "")		throw "값을 입력하세요"
+				if(x == "")		throw "값을 입력하세요"	//예외가 발생해 자동중단되기 때문에 다음 if문이 실행되지 않음.
 				if(isNaN(x))	throw "숫자를 입력하세요"
 				if(x>snum)		throw "더 작은 수 입력하세요"
 				if(x<snum)		throw "더 큰 수를 입력하세요"
