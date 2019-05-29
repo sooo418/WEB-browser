@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<style>
+#one {
+	position: absolute;
+	left: 300px;
+	top: 100px;
+	background-color: cyan;
+	width: 200px;
+	height: 50px;
+	background-color: cyan;
+}
+
+#two {
+	background-color: yellow;
+	width: 200px;
+	height: 50px;
+	position: static;
+	/* position을 static으로 선언하면 문서의 정상적인 흐름에 
+	따라서 배치된다. static으로 선언하지 않은 것과 결과는 같다. */
+	left:100px;
+	/* position이 static이면 위치가 변하지 않는다. */
+}
+
+#three {
+	position: relative;
+	left: 30px;		top:100px;
+	/* 정상적인 위치에서 왼쪽에서 상대적으로 30픽셀 멀어지다 */
+	width: 200px;
+	height: 50px;
+	background-color: lightgreen;
+}
+
+#four {
+	position: fixed;
+	left: 100px; top: 100px;
+	width: 200px;
+	height: 50px;
+	background-color: lightpink;
+}
+</style>
+</head>
+<body>
+	<p id="one">block #1<br/>position:absolute;<br/></p>
+	<div id="two">
+		block #2<br /> position:static;<br />
+	</div>
+	<p id="three">block #3<br/>position:relative;<br/></p>
+	<h5 id="four">block #4<br/>position:fixed;<br/></h5>
+</body>
+</html>

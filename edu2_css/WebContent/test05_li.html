@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Li Test</title>
+<style>
+ul {
+	
+}
+
+.menu1 li {
+	list-style: none;
+	display: inline;
+	padding: 0.5em;
+	float: left;
+	/* float: right;일 시 메뉴1부터 메뉴7까지 
+	오른쪽에서 왼쪽으로 표시됨. */
+}
+/* 짝수 번째 자손 선택자 */
+.menu1 li:nth-child(2n) {
+	background-color: pink;
+}
+/* 홀수 번째 자손 선택자 */
+.menu1 li:nth-child(2n+1) {
+	background-color: skyblue
+}
+/*첫 번째 자손 선택자 */
+.menu1 li:first-child {
+	border-radius: 10px 0 0 10px;
+}
+/* 맨 끝 번째 자손 선택자 */
+.menu1 li:last-child {
+	border-radius: 0 10px 10px 0;
+}
+
+a {
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+	<ul class="menu1">
+		<li>메뉴1</li>
+		<li>메뉴2</li>
+		<li>메뉴3</li>
+		<li>메뉴4</li>
+		<li>메뉴5</li>
+		<li>메뉴6</li>
+		<li>메뉴7</li>
+	</ul>
+	<br>
+	<br>
+	<ul>
+		<li>메뉴1</li>
+		<li>메뉴2</li>
+		<li>메뉴3</li>
+		<li>메뉴4</li>
+		<li>메뉴5</li>
+		<li>메뉴6</li>
+		<li>메뉴7</li>
+	</ul>
+	<br>
+	<br>
+	<ul>
+		<li>메뉴1</li>
+		<li>메뉴2</li>
+		<li>메뉴3</li>
+		<li>메뉴4</li>
+		<li>메뉴5</li>
+		<li>메뉴6</li>
+		<li>메뉴7</li>
+	</ul>
+	<br>
+	<br>
+	<ul class="menu1">
+		<li><a href="#">메뉴 1</a></li>
+		<li><a href="#">메뉴 2</a></li>
+		<li><a href="#">메뉴 3</a></li>
+		<li><a href="#">메뉴 4</a></li>
+		<li><a href="#">메뉴 5</a></li>
+		<li><a href="#">메뉴 6</a></li>
+		<li><a href="#">메뉴 7</a></li>
+		<li><a href="#">메뉴 8</a></li>
+		<li><a href="#">메뉴 9</a></li>
+	</ul>
+</body>
+</html>

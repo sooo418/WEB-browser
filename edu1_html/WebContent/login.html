@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>form 처리</title>
+</head>
+<body>
+	<h1>form 처리 Get 방식</h1>
+	<!--reload가 가능하지만 id,pw가 그대로 표시되서 보안상 좋지않다. -->
+	<form action="process.jsp" method="get">
+
+		<table border="1">
+			<tr>
+				<td><label for="id"> email</label></td>
+				<td><input type="email" name="id" required="required" /><br /></td>
+				<!-- name값이 key값이 되고 입력된 값이 value값이 됨 -->
+			</tr>
+			<tr>
+				<td><label for="pw">pw</label></td>
+				<td><input type="password" name="pw" value=""><br /></td>
+			</tr>
+			<tr>
+				<th colspan="2">
+				<input type="submit" value="로그인"> 
+				<input type="reset" value="취소">
+				<a href="member.html">회원가입</a>
+				</th>
+			</tr>
+		</table>
+	</form>
+
+	<h1>form 처리 post 방식</h1>
+	<!-- id,pw가 가려지지만 reload가 안됨. -->
+	<form action="process.jsp" method="post">
+
+		<table border="1">
+			<tr>
+				<td><label for="id">id</label></td>
+				<td><input type="text" id="id" name="id" value="" /><br /></td>
+				<!-- name값이 key값이 되고 입력된 값이 value값이 됨 -->
+			</tr>
+			<tr>
+				<td><label for="pw">pw</label></td>
+				<td><input type="password" id="pw" name="pw" value=""><br /></td>
+			</tr>
+			<tr>
+				<th colspan="2">
+				<input type="submit" value="로그인"> 
+				<input type="reset" value="취소">
+				<a href="member.html">회원가입</a>
+				</th>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

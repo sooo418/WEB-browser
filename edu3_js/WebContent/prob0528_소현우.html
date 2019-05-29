@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<style type="text/css" rel="stylesheet" href="/edu2/css/table.css"></style>
+<script type="text/javascript">
+	var data=[	
+				{"name":"홍길동","phone_num":"010-1111-2222","home_num":"02-111-2222","email":"hh@hh.hh"},
+				{"name":"고길동","phone_num":"010-2222-2222","home_num":"02-222-2222","email":"gg@gg.gg"},
+				{"name":"최길동","phone_num":"010-3333-2222","home_num":"02-333-2222","email":"cc@cc.cc"},
+				{"name":"강길동","phone_num":"010-4444-2222","home_num":"02-444-2222","email":"h2@h2.hh"},
+				{"name":"구길동","phone_num":"010-5555-2222","home_num":"02-555-2222","email":"gugu@gu.gu"}
+			]
+
+	function getData(){
+		var result=document.getElementById('result')
+		var table="";
+		table += '<table border="1" class="tablea">'
+		table += '<tr><th>이름</th><th>전화번호</th><th>집 전화번호</th><th>이메일 주소</th></tr>'
+		for(let i of data){
+			table += "<tr>"
+			table += "<td>"
+			table += i.name
+			table += "</td>"
+			table += "<td>"
+			table += i.phone_num
+			table += "</td>"
+			table += "<td>"
+			table += i.home_num
+			table += "</td>"
+			table += "<td>"
+			table += i.email
+			table += "</td>"
+			table += "</tr>"
+		}
+		table += "</table>"
+		result.innerHTML = table;
+	}
+</script>
+</head>
+<body>
+	<button onclick="getData()">Data 가져오기</button><br>
+	<div id="result"></div>
+</body>
+</html>

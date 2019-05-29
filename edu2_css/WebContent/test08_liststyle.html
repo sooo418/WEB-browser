@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>liststyle</title>
+<style>
+ul {
+	list-style: none;
+	/*아무런 불릿을 붙이지 않는다.*/
+	text-align: center;
+	border-top: 1px solid red; 
+	border-bottom: 1px solid red;
+	/*리스트의 위와 아래에 경계선을 그린다.*/
+	padding: 10px 0;
+}
+ul li {
+	display: inline;
+	/*리스트 항목이 인라인 형태로 표시된다.*/
+	text-transform:uppercase;
+	/*대문자로 변환*/
+	padding: 0 10px;
+	letter-spacing: 10px;
+	/*항목 간의 간격과 글자 간격설정*/
+}
+ul li a {
+	text-decoration: none;
+	clolr: black;
+}
+ul li a:hover {
+	text-decoration: underline;
+}
+/*ul li a에 커서를 올릴 시 밑줄 생성*/
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+</body>
+</html>

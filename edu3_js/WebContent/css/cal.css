@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+h1{
+    position: absolute;
+    left: 45%;
+}
+table {
+    border: 2px solid blue;
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    background-color: #7448c1;
+    text-align: center;
+}
+
+a.num{
+    text-align: center;
+	display: block;
+	width: 40px;
+	height: 40px;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 4px;
+	text-decoration: none;
+	font-size: 120%;
+    font-weight: bold;
+    background: linear-gradient( to bottom, skyblue, white );
+}
+td{
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+}
+
+a.operation {
+    text-align: center;
+	display: block;
+	width: 40px;
+	height: 40px;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 4px;
+	text-decoration: none;
+	font-size: 120%;
+    font-weight: bold;
+    background: linear-gradient( to bottom, skyblue, white );
+}
+a.operation2{
+    text-align: center;
+	display: block;
+	width: 100px;
+	height: 40px;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 4px;
+	text-decoration: none;
+	font-size: 120%;
+    font-weight: bold;
+    background: linear-gradient( to bottom, skyblue, white );
+}
+input.io{
+    text-align: right;
+    border: 2px solid green;
+    width:280px;
+    height:30px;
+    margin:4px;
+    font-size: 150%;
+    font-weight: bold;

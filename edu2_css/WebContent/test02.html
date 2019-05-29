@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>css 2</title>
+<style>
+#header{
+	width=100%;
+	text-align: center;
+	margin:0 auto;
+	background-color: gray;
+}
+#contents{
+	width: 100%;
+	margin:0 auto;
+	overflow: hidden;
+}
+#menu{
+	width: 25%;
+	background-color: aqua;
+	float: left;
+}
+#main{
+	width: 75%;
+	background-color: lime;
+	float: right;
+}
+#footer{
+	text-decoration: underline;
+	text-align: right;
+	color: skyblue;
+	font-style: italic;
+	background-color: gray;
+	clear: both;
+	/* clear: both;는 위에 영향을 받지않음 */
+}
+
+
+
+</style>
+</head>
+<body>
+	<div id="header">
+		<h1>오늘의 뉴스</h1>
+	</div>
+
+	<div id="contents">
+		<div id="menu">
+		<ul>
+			<li><a href="#">home</a></li>
+			<li><a href="#">login</a></li>
+			<li><a href="#">회원가입</a></li>
+			<li><a href="#">참고사이트</a></li>
+		</ul></div>
+		<div id="main">
+			<h3>CSS Example 1</h3>
+			<p>The language for programming web pages
+			
+			<h3>CSS Example 2</h3>
+			<p>The language for programming web pages
+			
+			<h3>CSS Example 3</h3>
+			<p>The language for programming web pages
+		</div>
+	</div>
+
+	<div id="footer">기사제보 및 문의 메일주소: nnnnn@nnnn.com</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>web fonts</title>
+<style>
+@import
+	url('https://fonts.googleapis.com/css?family=Slabo+27px&display=swap');
+</style>
+<style type="text/css">
+@media screen and (max-width:500px) {
+	body {
+		background-color: red;
+	}
+}
+/*화면 크기가 500이하면 바탕색이 빨간색*/
+@media screen and (min-width:600px) {
+	body {
+		background-color: blue;
+	}
+} 
+/*화면 크기가 600이상이면 바탕색이 파란색*/
+p.a {
+	font-family: 'Slabo 27px', serif;
+}
+
+h1:hover {
+	font-family: 'Slabo 27px', serif;
+	text-align: center;
+}
+
+.a:hover {
+	font-family: 'Slabo 27px', serif;
+	text-shadow: 5px 5px 5px cyan;
+}
+
+img {
+	float: right;
+	margin: 20px;
+}
+
+#p {
+	clear: both;
+	width: 300px;
+	height: 120px;
+	background-color: lightgreen;
+	overflow: scroll;
+}
+</style>
+</head>
+<body>
+
+	<h1>가만보자~~</h1>
+	<img src="http://70.12.115.67:9090/edu2/img/cat.jpg" alt="애용이"
+		width="400px" height="400px">
+	<p id="p" class="a">결국 아빠 정환은 좀비가 된 딸을 데리고 고향에 내려가기 결심하고 이로 인해 벌어지는
+		이야기를 생생하게 그렸습니다. 극중에는 김애용이라는 고양이가 등장하는데요. 주인공만큼 있는 애용이랍니다. 정말 사람같이
+		행동하는데 너무 귀여워 사랑을 한몸에 받고 있는 캐릭터랍니다. 고양이를 키우시는 집사라면 김애용을 좋아하기 마련인데요. 야옹이
+		아닌 애용으로 우는 고양이 김애용이가 드디어 카카오톡 이모티콘으로 새롭게 출시됐습니다. what's the matter?
+		can you get a ride?
+</body>
+</html>
