@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<style>
+#prev{
+	position: relative; 
+	top: 260px; 
+	left: 210px;
+	font-size: 150%
+	
+}
+#next{
+	position: relative; 
+	top: 260px; 
+	left: 1000px;
+	font-size: 150%
+}
+h1{
+	text-align: center;
+}
+img{
+	display:block;
+	margin:0 auto;
+}
+</style>
+<script>
+$(function(){
+	let i=1;
+	$('img').attr('src','http://70.12.115.67:9090/edu5_ajax/img/'+i+'.jpg')
+	$('img').attr('width','800')
+	$('img').attr('height','500')
+	$('#next').click(function(){
+		i++;
+		if(i>=3)
+			i=3;
+		$('img').attr('src','http://70.12.115.67:9090/edu5_ajax/img/'+i+'.jpg')
+	})
+	$('#prev').click(function(){
+		i--;
+		if(i<=1)
+			i=1;
+		$('img').attr('src','http://70.12.115.67:9090/edu5_ajax/img/'+i+'.jpg')
+	})
+})
+</script>
+</head>
+<body>
+	<h1>Manual Slides</h1>
+	<span id="prev">◀</span>
+	<span id="next">▶</span>
+	<img /><br/>
+	
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aJax 01</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+var xdata;
+$(function(){
+	$('#btn1').click(function(){
+		$('#msg1').html('<h3>aJax 통신 ......</h3>');
+		
+		$.ajax({ 
+			url:"add.jsp",
+			type:'POST',
+			dataType:'json',
+			//data:{
+				//p1:$('#p1').val(),
+				//p2:$('#p2').val()
+			//},
+			data:$('form').serializeArray(),
+			success:function(data){
+				xdata=data;
+				$('#msg1').html('success');
+				$('#result').val(data.result);
+				
+			},
+			error:function(error,status){
+				$('#msg1').html(error);
+			}
+			
+		});
+		//ajax 통신에 필요한 가장 기본적인 값들
+
+
+	});
+	
+})
+
+})
+
+</script>
+</head>
+<body>
+	<h1>jQuery aJax add</h1>
+	<form action="">
+		<input type="text" name="p1" id="p1"> +
+		<input type="text" name="p2" id="p2"> =
+		<input type="text" name="result" id="result">
+	</form>
+	<button id="btn1">aJax 요청</button><br>
+	<div id="msg1"></div>
+
+</body>
+</html>

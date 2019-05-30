@@ -6,69 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>title</title>
     <link rel="stylesheet" href="http://70.12.115.67:9090/edu3_js/css/cal.css">
-    <script type="text/javascript">
-    var calculator = {
-    		n : '0',
-    		first : 0,
-    		second : 0,
-    		op : '',
-    		num : function(data) {
-    			this.n = document.getElementById('io');
-    			if (this.n.value == '0')
-    				this.n.value = "";
-    			this.n.value = this.n.value + data;
-    		},
-    		dot : function() {
-    			tmp=this.n.value;
-    			if (tmp.charAt(tmp.length - 1) != '.')
-    				this.n.value = this.n.value + '.';
-    		},
-    		trans : function(op) {
-    			if (this.n.value != 0) {
-    				this.first = parseFloat(this.n.value);
-    			}
-    			this.op = op;
-    			this.n.value = 0;
-    		},
-    		result : function() {
-    			this.second = parseFloat(this.n.value);
-    			if(this.second==0)
-    				this.second=this.first;
-    			if (this.op == '+') {
-    				result=this.first + this.second;
-    				this.first = result;
-    				this.n.value = result
-    			}
-    			if (this.op == '-') {
-    				result=this.first - this.second;
-    				this.first = result;
-    				this.n.value = result
-    			}
-    			if (this.op == '*') {
-    				result=this.first * this.second;
-    				this.first = result;
-    				this.n.value = result
-    			}
-    			if (this.op == '/') {
-    				result=this.first / this.second;
-    				this.first = result;
-    				this.n.value = result
-    			}
-    			if (this.op == '%') {
-    				result=this.first % this.second;
-    				this.first = result;
-    				this.n.value = result
-    			}
-    		},
-    		reset : function() {
-    			this.first = 0;
-    			this.second = 0;
-    			this.op = '';
-    			this.n.value = 0;
-    		}
-    	}
-
-    </script>
+    
 </head>
 
 <body>

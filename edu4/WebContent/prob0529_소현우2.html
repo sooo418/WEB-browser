@@ -9,11 +9,11 @@
 	
 </script>
 <script type="text/javascript">
-window.onload=function(){
+$(document).ready(function(){
 	$('.slide').hide()
-}
+});
 function sliding(){
-	$('.slide').slideDown(3000)
+	$('.slide').slideDown(2500)
 }
 function toggle(){
 	$('.slide').toggle(1000)
@@ -21,6 +21,7 @@ function toggle(){
 function stop(){
 	$('.slide').stop()
 }
+
 </script>
 <style type="text/css">
 table {

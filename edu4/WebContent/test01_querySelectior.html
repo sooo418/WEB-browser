@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
 <title>querySelector</title>
 <script>
 	window.onload = function() {
@@ -40,7 +42,9 @@
 	<h1>hello 6</h1>
 	<p>document.querySelectorAll('.hc'), 
 	document.querySelector('#h1')
-
+	
+	$('h1').eq(1).text('!!!!')
+	$('h1:eq(1)').text('@@@@@')
 
 	
 </body>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<script>
+$(function(){
+	$('#btn1').click(function(){
+		$('#result').load('json.jsp')
+	})
+})
+</script>
+</head>
+<body>
+	<button id="btn1">json 요청</button>
+	<div id="result"></div>
+</body>
+</html>
