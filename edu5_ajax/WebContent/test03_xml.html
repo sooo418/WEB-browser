@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<style>
+	#msg{
+		width:500px;
+		height:300px;
+		overflow:scroll;
+	}
+	
+	table{
+		width: 50%;
+		border-collapse: collapse;
+	}
+	table tr th{
+		border: 1px solid skyblue;
+	}
+</style>
+<script>
+	var xdata;
+	$(function(){
+		$('#btn1').click(function(){
+			getXml();	
+		})
+	})
+	
+	function getXml(){
+		$.ajax({
+			url:'xml.jsp',
+			success:function(data){
+				xdata=data;
+				displayXml(data);
+			},
+			error:function(e){
+				$('#msg').text("error : "+e)			
+			}
+		})
+	}
+	function displayXml(data){
+		var result = "";
+		result="<table>"
+		var users = $(data).find('user');
+		$(users).each(function(index,item){	//반복문과 같다.
+			var id = $(item).find('id').text();	//user태그의 자식요소인 id를 찾아 텍스트값을 id변수에 저장한다.
+			var name = $(item).find('name').text();	//user태그의 자식요소인 name을 찾아 텍스트값을 name변수에 저장한다.
+			result += "<tr><th>" + id + "</th><th>" + name + "</th></tr>"
+		})
+		result += "</table>"
+		
+		$('#msg').html(result);
+	}
+	
+</script>
+</head>
+<body>
+	<h2>jQuery aJax xml</h2>
+	<button id="btn1">get Data (xml)</button>
+	<div id="msg"></div>
+</body>
+</html>

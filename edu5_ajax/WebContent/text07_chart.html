@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<style>
+#container {
+	min-width: 310px;
+	max-width: 800px;
+	height: 400px;
+	margin: 0 auto
+}
+</style>
+<script>
+var data;
+$.ajax({
+	url:'chart_data.jsp',
+	success:function(chart){
+		data=JSON.parse(chart)
+	},
+	error:function(){
+		$('#container').text('error',e.name)
+	}
+})
+
+
+$(function(){
+	$('#btn').click(function(){
+		chart(data);
+	})
+})
+function chart(data){
+	Highcharts.chart('container', {
+
+	    title: {
+	        text: 'Solar Employment Growth by Sector, 2010-2016'
+	    },
+
+	    subtitle: {
+	        text: 'Source: thesolarfoundation.com'
+	    },
+
+	    yAxis: {
+	        title: {
+	            text: 'Number of Employees'
+	        }
+	    },
+	    legend: {
+	        layout: 'vertical',
+	        align: 'right',
+	        verticalAlign: 'middle'
+	    },
+
+	    plotOptions: {
+	        series: {
+	            label: {
+	                connectorAllowed: false
+	            },
+	            pointStart: 1
+	        }
+	    },
+
+	    series: data,
+	  
+
+	    responsive: {
+	        rules: [{
+	            condition: {
+	                maxWidth: 500
+	            },
+	            chartOptions: {
+	                legend: {
+	                    layout: 'horizontal',
+	                    align: 'center',
+	                    verticalAlign: 'bottom'
+	                }
+	            }
+	        }]
+	    }
+
+	});
+	
+}
+</script>
+
+</head>
+<body>
+	<button id="btn"> 차트 보기 </button>
+	<div id="container"></div>
+	
+</body>
+</html>

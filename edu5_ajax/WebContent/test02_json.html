@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery aJax json</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<style>
+	#msg{
+		width: 500px;
+		height: 300px;
+		overflow: scroll;
+	}
+	table{
+		width: 50%;
+		border-collapse: collapse;
+	}
+	table tr th{
+		border: 1px solid skyblue;
+	}
+</style>
+<script>
+	const log = console.log;
+	var jdata;
+	$(function(){
+		$('#btn1').click(function(){
+			getData();
+			
+		});
+	})
+	
+	function getData(){
+		//$.ajax({ 환경 설정  });	
+		$.ajax({ 
+			url:'json.jsp',
+			dataType:'json',
+			success:function(data){
+				//alert(data);
+				//log(data);
+				jdata=data;
+				display(data);
+			},
+			error:function(e){
+			alert('error : '+e.name)
+			}
+		});	
+	}
+	
+	function display(data){
+		var result = "<table>";
+		$(data).each(function(index,item){	//item에는 객체가 들어감
+			result += "<tr><th>" + item.name + "</th><th>" + item.id + "</th></tr>"
+		});
+		result += "</table>"
+		$('#msg').html(result);
+		
+	}
+	
+</script>
+</head>
+<body>
+	<h2>jQuery aJax json</h2>
+	<button id="btn1">Get Date(json)</button>
+	<div id="msg"></div>
+</body>
+</html>

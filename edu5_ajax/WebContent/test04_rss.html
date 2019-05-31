@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<style>
+	#msg{
+		width:500px;
+		height:300px;
+		overflow:scroll;
+	}
+	
+	table{
+		width: 50%;
+	}
+	table tr th{
+		border: 1px solid skyblue;
+	}
+</style>
+<script>
+	var xdata;
+	$(function(){
+		$('#btn1').click(function(){
+			getXml();	
+		})
+	})
+	
+	function getXml(){
+		$.ajax({
+			url:'rss.jsp',
+			success:function(data){
+				xdata=data;
+				displayXml(data);
+			},
+			error:function(e){
+				$('#msg').text("error : "+e)			
+			}
+		})
+	}
+	function displayXml(data){
+		var result = "";
+		result = "<table>"
+		var location = $(data).find('location');
+		var d =$(location).find('data');
+		$(location).each(function(index,item){	
+			var city = $(item).find('city').text();	
+			
+			//result += "<tr><th>" + city + "</th></tr>"
+			$(d).each(function(index,item){
+				var tmEf = $(item).find('tmEf').text();	
+				var wf = $(item).find('wf').text();	
+				var tmn = $(item).find('tmn').text();	
+				var tmx = $(item).find('tmx').text();	
+				var reliability = $(item).find('reliability').text();
+				
+				result += "<tr><th>" + city + "</th><th>" + tmEf + "</th><th>" + wf + "</th><th>" + tmn + 
+				"</th><th>" + tmx + "</th><th>" + reliability + "</th></tr>"
+			})
+		})
+	
+		result += "</table>"
+		
+		$('#msg').html(result);
+	}
+	
+</script>
+</head>
+<body>
+	<h2>jQuery aJax xml</h2>
+	<button id="btn1">get Data (xml)</button>
+	<div id="msg"></div>
+</body>
+</html>
