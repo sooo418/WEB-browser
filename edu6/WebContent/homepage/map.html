@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map</title>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false">
+	//센서를 사용하지 않으면 키값이 필요없다.
+</script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	
+</script>
+<style>
+
+#map {
+	width: 544px;
+	height: 412px;
+	background-color: gray;
+}
+</style>
+</head>
+<body>
+	<div id="map"></div>
+
+	<script>
+		navigator.geolocation.getCurrentPosition(initmap);
+
+		function initmap(location) {
+			var cen = {
+				lat : location.coords.latitude, //위도
+				lng : location.coords.longitude
+			//경도
+			};
+			
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom : 14,
+				center : cen
+			});
+
+			var marker = new google.maps.Marker({ //marker객체 생성
+				position : cen,
+				map : map,
+				label:"me"
+			});
+		
+		}
+	</script>
+	<!--  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCztYML0B4F7NEA4vI4C5y4TOAWYJqrgzs&callback=initMap"
+    async defer></script> -->
+</body>
+</html>

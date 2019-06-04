@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>form 처리</title>
+<style>
+	h2{
+		text-align: center;
+		font-family: 'Slabo 27px', serif;
+		font-size: 130%;
+		font-weight: bold;
+	}
+	table{
+		border: 2px solid blue;
+   		background-color: #7448c1;
+    	text-align: center;
+    	position: relative;
+    	top:25px;
+    	left:25px;
+	}
+	.font{
+		color:white;
+	}
+	.box{
+		height:23px;
+	}
+</style>
+</head>
+<body>
+	<h2>form 처리 post 방식</h2>
+	<!-- id,pw가 가려지지만 reload가 안됨. -->
+	<form action="process.jsp" method="post">
+
+		<table border="1">
+			<tr>
+				<td><label for="id">id</label></td>
+				<td><input class="box" type="text" id="id" name="id" value="" /><br /></td>
+				<!-- name값이 key값이 되고 입력된 값이 value값이 됨 -->
+			</tr>
+			<tr>
+				<td><label for="pw">pw</label></td>
+				<td><input class="box" type="password" id="pw" name="pw" value=""><br /></td>
+			</tr>
+			<tr>
+				<th colspan="2">
+				<input type="submit" value="로그인"> 
+				<input type="reset" value="취소">
+				<a href="member.html" class="font">회원가입</a>
+				</th>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

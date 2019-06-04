@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>title</title>
+    <style>
+    table {
+    border: 2px solid blue;
+    background-color: #7448c1;
+    text-align: center;
+    position: relative;
+    top:25px;
+    left:25px;
+}
+
+a.num{
+    text-align: center;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	border-radius: 8px;
+	margin: 3px;
+	text-decoration: none;
+	font-size: 120%;
+    font-weight: bold;
+    background: linear-gradient( to bottom, skyblue, white );
+}
+
+a.operation {
+    text-align: center;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	border-radius: 8px;
+	margin: 3px;
+	text-decoration: none;
+	font-size: 120%;
+    font-weight: bold;
+    background: linear-gradient( to bottom, skyblue, white );
+}
+a.operation2{
+    text-align: center;
+	display: block;
+	width: 80px;
+	height: 30px;
+	border: 1px solid black;
+	border-radius: 8px;
+	margin: 3px;
+	text-decoration: none;
+	font-size: 120%;
+    font-weight: bold;
+    background: linear-gradient( to bottom, skyblue, white );
+}
+input.io{
+    text-align: right;
+    border: 2px solid green;
+    width:228px;
+    height:30px;
+    margin:4px;
+    font-size: 150%;
+    font-weight: bold;
+    
+    </style>
+    <script type="text/javascript">
+    var calculator = {
+    		n : '0',
+    		first : 0,
+    		second : 0,
+    		op : '',
+    		num : function(data) {
+    			this.n = document.getElementById('io');
+    			if (this.n.value == '0')
+    				this.n.value = "";
+    			this.n.value = this.n.value + data;
+    		},
+    		dot : function() {
+    			tmp=this.n.value;
+    			if (tmp.charAt(tmp.length - 1) != '.')
+    				this.n.value = this.n.value + '.';
+    		},
+    		trans : function(op) {
+    			if (this.n.value != 0) {
+    				this.first = parseFloat(this.n.value);
+    			}
+    			this.op = op;
+    			this.n.value = 0;
+    		},
+    		result : function() {
+    			this.second = parseFloat(this.n.value);
+    			if(this.second==0)
+    				this.second=this.first;
+    			if (this.op == '+') {
+    				result=this.first + this.second;
+    				this.first = result;
+    				this.n.value = result
+    			}
+    			if (this.op == '-') {
+    				result=this.first - this.second;
+    				this.first = result;
+    				this.n.value = result
+    			}
+    			if (this.op == '*') {
+    				result=this.first * this.second;
+    				this.first = result;
+    				this.n.value = result
+    			}
+    			if (this.op == '/') {
+    				result=this.first / this.second;
+    				this.first = result;
+    				this.n.value = result
+    			}
+    			if (this.op == '%') {
+    				result=this.first % this.second;
+    				this.first = result;
+    				this.n.value = result
+    			}
+    		},
+    		reset : function() {
+    			this.first = 0;
+    			this.second = 0;
+    			this.op = '';
+    			this.n.value = 0;
+    		}
+    	}
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <table>
+            <tr>
+                <td colspan="5"><input type="text" id="io" class="io" value="0"></td>
+            </tr>
+            <tr>
+                <td><a href="#" id="7" class="num" onclick="calculator.num(7)">7</a></td>
+                <td><a href="#" id="8" class="num" onclick="calculator.num(8)">8</a></td>
+                <td><a href="#" id="9" class="num" onclick="calculator.num(9)">9</a></td>
+                <td colspan="2"><a href="#" id="C" class="operation2" onclick="calculator.reset()">C</a></td>
+            </tr>
+            <tr>
+                <td><a href="#" id="4" class="num" onclick="calculator.num(4)">4</a></td>
+                <td><a href="#" id="5" class="num" onclick="calculator.num(5)">5</a></td>
+                <td><a href="#" id="6" class="num" onclick="calculator.num(6)">6</a></td>
+                <td><a href="#" id="/" class="operation" onclick="calculator.trans('/')">/</a></td>
+                <td><a href="#" id="%" class="operation" onclick="calculator.trans('%')">%</a></td>
+            </tr>
+            <tr>
+                <td><a href="#" id="1" class="num" onclick="calculator.num(1)">1</a></td>
+                <td><a href="#" id="2" class="num" onclick="calculator.num(2)">2</a></td>
+                <td><a href="#" id="3" class="num" onclick="calculator.num(3)">3</a></td>
+                <td><a href="#" id="*" class="operation" onclick="calculator.trans('*')">*</a></td>
+                <td><a href="#" id="+" class="operation" onclick="calculator.trans('+')">+</a></td>
+            </tr>
+            <tr>
+                <td><a href="#" id="0" class="num" onclick="calculator.num(0)">0</a></td>
+                <td><a href="#" id="." class="num" onclick="calculator.dot()">.</td>
+                <td colspan="2"><a href="#" id="=" class="operation2" onclick="calculator.result()">=</a></td>
+                <td><a href="#" id="-" class="operation" onclick="calculator.trans('-')">-</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

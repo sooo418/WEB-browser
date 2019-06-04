@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<link rel="stylesheet"
+	href="http://70.12.115.67:9090/edu6/css/homepage.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<script>
+
+function bc(data){
+	if(data==1){
+		var out = document.getElementById('gallery');
+		out.innerHTML='<object width="300px" height="292px" data="gallery.html" ></object>';
+	}
+	if(data==2){
+		var out = document.getElementById('cal');
+		out.innerHTML='<object widht: "250px" height="292px" data="calculator.html" ></object>';
+	}
+	if(data==3){
+		var out = document.getElementById('login');
+		out.innerHTML='<object width="300px" height="292px" data="login.html" ></object>';
+	}
+	if(data==4){
+		var out = document.getElementById('chart');
+		out.innerHTML='<object width="364px" height="412px" data="chart.html" ></object>';
+	}
+	if(data==5){
+		var out = document.getElementById('map');
+		out.innerHTML='<object width="544px" height="412px" data="map.html" ></object>';
+	}
+}
+</script>
+<style>
+@import
+	url('https://fonts.googleapis.com/css?family=Slabo+27px&display=swap');
+</style>
+</head>
+<body>
+	<header>
+		<h1>소현우 HOME</h1>
+	</header>
+	<nav>
+		<h2 id="list">Button List</h2>
+		<a href="#" id="btn1" onclick="bc(1)">갤러리</a> 
+		<a href="#" id="btn2" onclick="bc(2)">계산기</a> 
+		<a href="#" id="btn3" onclick="bc(3)">로그인</a> 
+		<a href="#" id="btn4" onclick="bc(4)">차트 표시</a> 
+		<a href="#" id="btn5" onclick="bc(5)">지도 보기</a>
+	</nav>
+	<section>
+		<div id="total">
+			<div id="gallery"></div>
+			<div id="cal"></div>
+			<div id="login"></div>
+			<div id="chart"></div>
+			<div id="map"></div>
+
+		</div>
+	</section>
+	<footer>
+		<div id="foot"></div>
+	</footer>
+</body>
+</html>

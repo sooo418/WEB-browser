@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<style>
+#prev{
+	float:left;
+	position:relative;
+	top:100px;
+	font-size: 120%;
+}
+#next{
+	float:right;
+	position:relative;
+	top:100px;
+	font-size: 120%;
+}
+h1{
+	text-align: center;
+	margin:0 auto;
+}
+img{
+	display:block;
+	margin:0 auto;
+}
+</style>
+
+</head>
+<body>
+	<h1>Gallery</h1>
+	<span id="prev" onclick="prev()">◀</span>
+	<span id="next" onclick="next()">▶</span>
+	<img id='img1'/><br/>
+	
+<script>
+
+	let i=0;
+	var m=[
+		"http://70.12.115.67:9090/edu6/img/1.jpg", "http://70.12.115.67:9090/edu6/img/2.jpg",
+		"http://70.12.115.67:9090/edu6/img/3.jpg", "http://70.12.115.67:9090/edu6/img/4.jpg",
+		"http://70.12.115.67:9090/edu6/img/5.jpg", "http://70.12.115.67:9090/edu6/img/6.jpg",
+		"http://70.12.115.67:9090/edu6/img/7.jpg", "http://70.12.115.67:9090/edu6/img/8.jpg",
+		"http://70.12.115.67:9090/edu6/img/9.jpg", "http://70.12.115.67:9090/edu6/img/10.jpg",
+		"http://70.12.115.67:9090/edu6/img/11.jpg", "http://70.12.115.67:9090/edu6/img/12.jpg"]
+	var x = document.getElementById('img1');
+	
+	x.setAttribute('src',m[i])
+	x.setAttribute('width','250')
+	x.setAttribute('height','250')
+	
+	function next(){
+		if(i==11)
+			i=-1;
+		x.setAttribute('src',m[++i])
+	}
+	function prev(){
+		if(i==0)
+			i=12;
+		x.setAttribute('src',m[--i])
+	}
+
+</script>
+</body>
+</html>

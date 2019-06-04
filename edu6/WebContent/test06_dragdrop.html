@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	
+</script>
+<style>
+#shopping_cart {
+	width: 450px;
+	height: 100px;
+	paddiong: 10px;
+	border: 1px dotted red;
+}
+#mybag{
+	width:460px;
+	height:100px;
+	border:1px dotted blue;
+}
+</style>
+<script>
+	var log = console.log;
+	function allowDrop(e) {
+		//log(2)
+		e.preventDefault(); //디폴트 처리를 방지해주는 메서드
+	}
+	function handleDragStart(e) {
+		//log(1)
+		e.dataTransfer.effectAllowed = 'move';
+		e.dataTransfer.setData("Text", e.target.id);//드래그에 id를 싣는다
+		log("source: " + e.target.id)
+	}
+
+	function handleDrop(e,e2) {
+		//log(3)
+		e.preventDefault();
+		var src = e.dataTransfer.getData("Text");
+		//e.target.appendChild(document.getElementById(src));
+		//드래그에서 데이터를 꺼내서 자식노드로 추가한다.
+		e2.appendChild(document.getElementById(src));
+		log("target: " + src)
+		log(e.target)
+	}
+</script>
+</head>
+<body>
+	<p>원하는 물걸은 끌어서 옮기세요.</p>
+	<div id="shopping_cart" ondrop="handleDrop(event,this)"
+		ondragover="allowDrop(event)"></div>
+	<br>
+	<div id="mybag" ondrop="handleDrop(event,this)"
+		ondragover="allowDrop(event)">
+		<!-- this를 추가해 뺴기도 가능 -->
+		
+		<img id="img1" src="./img/6.jpg" draggable="true"
+			ondragstart="handleDragStart(event)" width="150" height="100">
+		<img id="img2" src="./img/7.jpg" draggable="true"
+			ondragstart="handleDragStart(event)" width="150" height="100">
+		<img id="img3" src="./img/8.jpg" draggable="true"
+			ondragstart="handleDragStart(event)" width="150" height="100">
+	</div>
+</body>
+</html>
